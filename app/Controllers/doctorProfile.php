@@ -134,5 +134,21 @@ class doctorProfile extends BaseController
 
     }
   }
+  public function writedb(){
+    session();
+    session()->regenerate();
+    $doctor_id = session()->get('doctor_id');
+    $time = $this->request->getPost('time');
+    $location = $this->request->getPost('location');
+    $appointmentdoc = new \App\Models\appointmentdoc();
+    $queryuser = $appointmentdoc->query("Insert into appointmentdoc (doctor_id, time, location) values('$doctor_id', '$time', '$location')");
+     
+     return redirect()->to('doctorProfile/index')->with('success', 'User Registration Successful');
+     if (!$queryuser) {
+      //echo "fail";
+    
+
+  }
+  }
 
 }
