@@ -40,9 +40,7 @@ public function deleteUser($doctor_id)
                         DELETE FROM doctor
                         WHERE doctor_id = $doctor_id");
          return redirect()->to('AdminDoctorProfiles/index')->with('fail', 'The Profile has been deleted');;
-        if (!$queryuser) {  
-      
-}
+        
 } 
 }
 
