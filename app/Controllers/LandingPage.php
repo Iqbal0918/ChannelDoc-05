@@ -11,3 +11,4 @@ class LandingPage extends BaseController
         return view('LandingPage/index');
     }
 }
+    
