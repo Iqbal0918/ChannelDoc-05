@@ -49,14 +49,17 @@
           <a class="nav-link scrollto" href= <?php echo site_url('/Search/index') ?>>Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?php echo site_url('/Aboutus/index') ?>">
             About Us
           </a>         
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?php echo site_url('/Contactus/index') ?>">
             Contact Us
           </a>         
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning" href="tel:110">Call Ambulance</a>  
         </li>
         <ul class ="navbar-nav ms">
         <?php if(isset($_SESSION['user_id'])){ ?>
