@@ -33,6 +33,9 @@
 
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+      <li class="nav-item">
+          <a class="nav-link" href="<?php echo site_url('/DoctorDashboard/index') ?>">Dashboard</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
@@ -43,12 +46,12 @@
           <a class="nav-link scrollto" href="#doctors">Doctors</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?php echo site_url('/DoctorAboutus/index') ?>">
             About Us
           </a>         
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?php echo site_url('/DoctorContactus/index') ?>">
             Contact Us
           </a>         
         </li>
@@ -64,8 +67,7 @@
     </div>
   </div>
 </nav>
-
-  <br> <br>
+<br> <br>
   <div class="card" style="margin-left:20px;margin-right:20px">
     <div class="card-header bg-custom" style="color:white">
       My Profile
@@ -230,6 +232,26 @@
   </div>
 </div>
   </div>
+
+  <form action="<?php echo site_url('/doctorProfile/writedb') ?>" method="POST" enctype="multipart/form-data">
+
+  <div class="form-row">
+        <div class="row mt-2">
+
+          <div class="form-group col-md-4">
+            <label>Times Available</label>
+            <input class="form-control" type="text" placeholder="Available times" name="time" id="time" >
+            <label>Location</label>
+            <input class="form-control" type="text" placeholder="Location" name="location" id="location" >
+            <!-- <label>ID</label>
+            <input class="form-control" type="text" placeholder="Enter your ID" name="doctor_id" id="doctor_id" > -->
+            <small class="form-text text-danger"></small>
+            <button type="submit" class="btn btn-primary btnlogin" >Submit</button>
+
+          </div>
+          </div>
+          </div>
+  </form>
  
 </body>
 
