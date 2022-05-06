@@ -60,7 +60,7 @@
 <br> <br> <br>
 <div class="card">
     <div class="card-header">
-      <h2> Patient Profiles Summary </h2>
+      <h2> Feedback </h2>
     </div>
   </div>
     </div>
@@ -71,7 +71,7 @@
             <div class="col-md-12 mt-5">
              
                     <div class="card-header">
-                        <h4>Patients Registered to the System</h4>
+                        <h4>Feedback</h4>
                     </div>
                     <div class="card-body">
                     <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -84,17 +84,10 @@
                         <table class="table table-bordered">
                             <thead style = "background-color:#28a745;color:#FFFFFF" >
                                 <tr>
-                                    <th>Account ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Gender</th>
-                                    <th>E-mail</th>
-                                    <th>Contact Number</th>
-                                    <th>NIC</th>
-                                    <th>Address</th>
-                                    <th>District</th>
-                                    <th>Approval</th>
-                                    <th>Removal</th>
+                                    <th>Practitioner's ID</th>
+                                    <th>Feedback</th>
+                                    <th>Description</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,26 +96,19 @@
 
                                     session();
 
-                                    $employeeModel = new \App\Models\employeeModel;
+                                    $fb= new \App\Models\fb;
 
                                     // Runs query to get approved ads of the user
-                                    $query = $employeeModel -> query("SELECT * FROM user "); 
+                                    $query = $fb -> query("SELECT * FROM fb "); 
 
                                     foreach ($query -> getResult() as $row){
 
                                 ?>
                                     <tr>
-                                        <td><?php echo $row -> user_id ?></td>
-                                        <td><?php echo $row -> fname ?></td>
-                                        <td><?php echo $row -> Lname ?></td>
-                                        <td><?php echo $row -> Gender ?></td>
-                                        <td><?php echo $row -> Email ?></td>
-                                        <td><?php echo $row -> phonenumber ?></td>
-                                        <td><?php echo $row -> NIC ?></td>
-                                        <td><?php echo $row -> Address ?></td>
-                                        <td><?php echo $row -> district ?></td>
-                                        <td>
-                                            <a href="<?php echo base_url('AdminPatientProfiles/approveUser/'.$row -> user_id)?>" class="btn btn-success float-end btn-sm">Approve Profile</a>
+                                        <td><?php echo $row -> doctor_name ?></td>
+                                        <td><?php echo $row -> Brief ?></td>
+                                        <td><?php echo $row -> Description ?></td>
+                                       
                                         </td>
                                         <td>
                                             <a href="<?php echo base_url('AdminPatientProfiles/deleteUser/'.$row -> user_id)?>" class="btn btn-danger float-end btn-sm">Delete Profile</a>
